@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OO7Ali Portal</title>
+    <style>
+        body {
+            background-color: #0A0A0C;
+            color: #FFFFFF;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #181A21;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #00E5FF;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 30px;
+        }
+        label {
+            color: #8A8D93;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            margin-top: 20px;
+        }
+        select, input[type="file"], input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #0F1015;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 30px;
+            background-color: #00E5FF;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #00B8CC;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>OO7Ali</h1>
+    <form action="/process" method="POST" enctype="multipart/form-data">
+        
+        <label for="mode">Select Module:</label>
+        <select name="mode" id="mode">
+            <option value="Shrink & Convert Files">Shrink & Convert Files</option>
+            <option value="Exact Excel Merge">Exact Excel Merge</option>
+            </select>
+
+        <label for="target_kb">Target Size (KB) - For Shrink Mode only:</label>
+        <input type="number" name="target_kb" id="target_kb" value="195">
+
+        <label for="files">Upload Source Files:</label>
+        <input type="file" name="files" id="files" multiple required>
+
+        <button type="submit">INITIATE SEQUENCE</button>
+    </form>
+</div>
+
+</body>
+</html>
